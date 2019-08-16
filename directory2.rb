@@ -20,16 +20,25 @@ def print_header
     puts "The students of Villains Academy"
     puts "-------------"
 end
+
 def print(students)
-  students.each.with_index do |student,index|
-    puts " #{index}. #{student[:name]} (#{student[:cohort]} cohort)"
-  end
-end
+      students.each do |student,index|
+        puts " #{index}. #{student[:name]} (#{student[:cohort]} cohort)"
+      end
+    end
+
+def print_with_index(students)
+      students.each.with_index do |student,index|
+        puts " #{index}. #{student[:name]} (#{student[:cohort]} cohort)"
+      end
+    end
+
 def print_footer(names)
   puts "Overall, we have #{names.count} great students"
 end
 #nothing happend until we call the methods
 students = input_students
 print_header
-print(students)
+#print(students)
+print_with_index(students)
 print_footer(students)
